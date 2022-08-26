@@ -1,0 +1,25 @@
+<ul>
+  <% @movies.each do |movie| %>
+  <li><%= movie.title %></li>
+  <li><%= movie.overview %></li>
+  <% end %>
+</ul>
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1>Movies List</h1>
+  <div class="grid-column-gap:16px grid-row-gap:16px">
+    <div class="row">
+      <% @movies.each do |movie| %>
+      <div class="col-sm" style="my-1">
+        <div class="card" style="width: 20rem; height: 20rem; margin: 1rem;">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= movie.title %></h5>
+            <p class="card-text"><%= movie.overview %></p>
