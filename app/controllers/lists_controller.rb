@@ -1,23 +1,39 @@
 class ListsController < ApplicationController
+  # Prepare the data necessary before the action execute
+  before_action :set_list, only: [:edit, :update, :show]
+
   def index
     @lists = List.all
   end
-end
 
-def show
-end
+  def show
+  end
 
-def update
-  @list.update(list_params)
-  redirect_to list_path(@list)
-end
+  def new
+    @list = List.new
+  end
 
-private
+  def create
+    @list = List.new(list_params)
+    if @list.save
+      redirect_to list_path(@list)
+    else
+      render :new
+    end
+  end
 
-def set_list
-  @list = List.find(params[:id])
-end
+  def update
+    @list.update(list_params)
+    redirect_to list_path(@list)
+  end
 
-def list_params
-  params.require(:list).permit(:name, :photo)
+  private
+
+  def set_list
+    @list = List.find(params[:id])
+  end
+
+  def list_params
+    params.require(:list).permit(:name, :photo)
+  end
 end

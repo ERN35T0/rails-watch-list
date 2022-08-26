@@ -1,0 +1,25 @@
+<%# header %>
+<div class="banner-container banner-change">
+  <div class="banner-nav-bar">
+    <div><h1><i class="fas fa-play"></i>Watch List</h1></div>
+    <div>
+      <ul class="banner-ul">
+        <li>Login</li>
+        <li class="btn-sign">Sign up</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<%# form %>
+<div class="container">
+  <div class="">
+    <div class="row new-form">
+      <div class="col-lg-6 left-bg-list">
+      </div>
+      <div class="col-lg-6 right-bg" >
+        <%= render 'form', list: @list %>
+      </div>
+    </div>
+  </div>
+
+</div>
